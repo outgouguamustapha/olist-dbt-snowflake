@@ -42,7 +42,17 @@ final as (
         case 
             when s.lifetime_orders_count > 1 then 'Repeat Buyer'
             else 'One-Time Buyer'
-        end as customer_segment
+        end as customer_segment,
+        case
+            when s.lifetime_orders_count = 1 then '1 Order'
+            when s.lifetime_orders_count = 2 then '2 Orders'
+            when s.lifetime_orders_count = 3 then '3 Orders'
+            else '4+ Orders'
+        end as order_frequency_bucket,
+        case
+            when s.lifetime_orders_count >= 4 then 4
+            else s.lifetime_orders_count
+        end as order_frequency_sort_key
 
     from customers c
     inner join customer_orders_summary s

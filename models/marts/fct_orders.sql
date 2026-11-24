@@ -72,9 +72,16 @@ final as (
         coalesce(i.freight_amount, 0) as freight_amount,
         coalesce(i.items_gross_amount, 0) + coalesce(i.freight_amount, 0) as total_order_amount,
         coalesce(p.total_payment_amount, 0) as total_payment_amount,
-        p.primary_payment_type,
+        coalesce(p.primary_payment_type, 'unpaid / unknown') as primary_payment_type,
         coalesce(p.payment_tenders_count, 0) as payment_tenders_count,
         coalesce(p.max_payment_installments, 0) as max_payment_installments,
+
+        -- Customer Order Sequence & Type
+        row_number() over(partition by c.customer_unique_id order by o.order_purchase_at asc, o.order_id asc ) as customer_order_sequence,
+        case 
+            when row_number() over ( partition by c.customer_unique_id order by o.order_purchase_at asc, o.order_id asc) = 1 then 'First Order'
+            else 'Repeat Order'
+        end as order_type, 
 
         -- Feedback
         r.average_review_score,

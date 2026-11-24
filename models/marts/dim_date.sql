@@ -17,13 +17,36 @@ final as (
         extract(year from calendar_date) as year,
         extract(quarter from calendar_date) as quarter,
         extract(month from calendar_date) as month,
-        to_char(calendar_date, 'MMMM') as month_name,
+        case extract(month from calendar_date)
+            when 1 then 'January'
+            when 2 then 'February'
+            when 3 then 'March'
+            when 4 then 'April'
+            when 5 then 'May'
+            when 6 then 'June'
+            when 7 then 'July'
+            when 8 then 'August'
+            when 9 then 'September'
+            when 10 then 'October'
+            when 11 then 'November'
+            when 12 then 'December'
+        end as month_name,
         to_char(calendar_date, 'MON') as month_short_name,
+        to_char(calendar_date, 'Mon YYYY') as month_year,
+        (extract(year from calendar_date) * 100 + extract(month from calendar_date)) as year_month_sort_key,
         extract(week from calendar_date) as week_of_year,
         extract(day from calendar_date) as day_of_month,
         extract(dayofweek from calendar_date) as day_of_week,
         to_char(calendar_date, 'DY') as day_of_week_short,
-        to_char(calendar_date, 'Day') as day_of_week_name,
+        case dayname(calendar_date)
+            when 'Mon' then 'Monday'
+            when 'Tue' then 'Tuesday'
+            when 'Wed' then 'Wednesday'
+            when 'Thu' then 'Thursday'
+            when 'Fri' then 'Friday'
+            when 'Sat' then 'Saturday'
+            when 'Sun' then 'Sunday'
+        end as day_of_week_name,
         
         -- Business logic flags
         case 
