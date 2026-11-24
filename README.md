@@ -38,7 +38,7 @@ Engineered with **Snowflake**, **dbt**, and **Microsoft Power BI Developer Mode 
 
 ## 1. Executive Overview
 
-Olist is the largest department store in Brazilian marketplaces, empowering thousands of small merchants across Brazil to sell products through a single integration hub. Between January 2017 and August 2018, the marketplace processed **99,441 customer orders** totaling **R$ 13.59M in gross merchandise value (GMV)** and **R$ 15.42M in gross transactions** across **32,951 unique SKUs** and **3,095 active sellers**.
+Olist is the largest department store in Brazilian marketplaces, empowering thousands of small merchants across Brazil to sell products through a single integration hub. Across the raw historical dataset, the marketplace recorded **99,441 customer orders** totaling **R$ 13.59M in gross merchandise value (GMV)** and **R$ 15.42M in gross transactions** across **32,951 unique SKUs** and **3,095 active sellers** (reconciling to **98,353 orders**, **32,787 active SKUs**, and **3,068 active sellers** within the analyzed `Jan 2017 – Aug 2018` 20-month operating window).
 
 Operating an e-commerce marketplace at continental scale across Brazil's 27 federative units presents complex operational challenges:
 * **Logistical Disparities:** Fulfillment lead times vary dramatically from 5–8 days within the industrialized Southeast (São Paulo, Rio de Janeiro) to 25–35+ days in the North and Northeast (Acre, Roraima, Amapá), severely impacting customer satisfaction.
@@ -476,8 +476,8 @@ Status: 100% PASS (0 Violations)
 
 The Power BI reporting suite (`Olist Marketplace Intelligence Suite.Report`) follows a modern enterprise layout:
 * **Canvas Specifications:** High-definition 1080p canvas ($1920 \times 1080\text{ px}$) configured with standard 16px margins and gutters.
-* **Navigation Architecture:** Left-side vertically stacked Page Navigator (`x=16, y=90, w=208, h=260`) styled with `#173B5E` idle state and `#00A88F` Accent Teal active state.
-* **Top Executive Controls:** Navy header banner (`#0F2942`) with fixed operating scope indicators (`Scope: Jan 2017 – Aug 2018 | 20 Full Operating Months`) paired with horizontal dropdown slicers for Customer State, Month, Order Status, and Year.
+* **Navigation Architecture:** Top-right horizontal Page Navigator embedded directly inside the top navy header banner (`#0F2942`) alongside the operating scope indicator (`Scope: Jan 2017 – Aug 2018 | 20 Full Operating Months`), styled with `#173B5E` idle state and `#00A88F` Accent Teal active state.
+* **Left-Rail Executive Controls & Slicers:** Slicers stacked vertically in the left rail (Customer State, Month, Order Status, and Year) positioned directly above the dynamic Key Takeaways card and a dedicated "Clear all slicers" reset button.
 * **High-Impact KPI Cards:** 168px elevated KPI container cards (`x=240, y=160, w=1664, h=168`) with integrated sparkline trends.
 * **Left-Rail Dynamic Takeaways:** High-contrast New Card tile (`x=16, y=681, w=208, h=320`) powered by dynamic DAX narratives.
 * **Accessibility:** 100% compliance with screen-reader accessible alt-text across all 45 visuals and zero overlapping containers.
@@ -516,7 +516,7 @@ The Power BI reporting suite (`Olist Marketplace Intelligence Suite.Report`) fol
 
 * **São Paulo Merchant Super-Hub:** Over **70% of active sellers (2,200+ merchants)** are headquartered in São Paulo state (`SP`), creating an asymmetric supply network where goods originate centrally and disperse across Brazil.
 * **Carrier Handover Efficiency:** Top merchant cohorts achieve an average warehouse dispatch turnaround of **2.5 to 3.2 days**, with sellers maintaining a **90%+ on-time carrier handover rate** scoring higher on customer feedback (4.2+ review score).
-* **Catalog Pareto Concentration:** Out of 32,951 active SKUs, the top 15% of product listings generate over 70% of GMV, led by *Health & Beauty*, *Watches & Gifts*, *Bed Bath & Table*, and *Computer Accessories*.
+* **Catalog Pareto Concentration:** Across the 32,787 active SKUs sold during the operating window (32,951 across full historical export), the top 15% of product listings generate over 70% of GMV, led by *Health & Beauty*, *Watches & Gifts*, *Bed Bath & Table*, and *Computer Accessories*.
 
 ---
 
