@@ -1,0 +1,33 @@
+relationship 71e2a1e9-4115-3a2f-eb3c-424745c21f6c
+	fromColumn: FCT_ORDERS.CUSTOMER_UNIQUE_ID
+	toColumn: DIM_CUSTOMERS.CUSTOMER_UNIQUE_ID
+
+relationship dbe31ba7-c28c-34a5-cd17-acd27d03fb9e
+	fromColumn: FCT_ORDER_ITEMS.SELLER_ID
+	toColumn: DIM_SELLERS.SELLER_ID
+
+relationship e7add80e-2c37-8226-566f-0b2c601e254d
+	fromColumn: FCT_ORDERS.ORDER_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship e3d8e2b0-d5dd-fa52-fdc0-5a0d4d63452d
+	fromColumn: FCT_ORDER_ITEMS.PRODUCT_ID
+	toColumn: DIM_PRODUCTS.PRODUCT_ID
+
+relationship 4f4c5155-dd33-5c36-2912-0de37a125e26
+	isActive: false
+	fromColumn: FCT_ORDER_ITEMS.SHIPPING_LIMIT_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship 91ec5daa-42ab-fd97-ec17-b26f923d92e5
+	fromColumn: FCT_ORDER_ITEMS.ORDER_DATE_KEY
+	toColumn: DIM_DATE.DATE_KEY
+
+relationship d70270bb-aad6-1ca6-0549-79c1c42fc42b
+	fromColumn: FCT_ORDERS.ORDER_STATUS
+	toColumn: DIM_ORDER_STATUS.ORDER_STATUS
+
+relationship 2a714d56-c8ff-d788-fda7-a2e181bea0c9
+	fromColumn: FCT_ORDER_ITEMS.ORDER_STATUS
+	toColumn: DIM_ORDER_STATUS.ORDER_STATUS
+

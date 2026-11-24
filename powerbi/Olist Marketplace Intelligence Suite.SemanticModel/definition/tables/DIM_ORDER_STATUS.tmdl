@@ -1,0 +1,18 @@
+/// Distinct order fulfillment lifecycle statuses dimension
+table DIM_ORDER_STATUS
+	lineageTag: 0dd77817-78f3-42ce-a537-d94078e2ef3e
+
+	column ORDER_STATUS
+		lineageTag: 9aed555d-df0f-46bb-8266-b379fb2c06b1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: FCT_ORDERS[ORDER_STATUS]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_ORDER_STATUS = calculated
+		mode: import
+		source = DISTINCT( fct_orders[order_status] )
+
+	annotation PBI_Id = d368e229deb942b59c802bbc58ab58de
+

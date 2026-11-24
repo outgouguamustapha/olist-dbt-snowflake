@@ -1,0 +1,179 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "8a4136bae027213bded1",
+  "displayName": "Order & Seller Details",
+  "displayOption": "FitToPage",
+  "height": 1080,
+  "width": 1920,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "79b4224c0e8a71257866",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DIM_CUSTOMERS"
+              }
+            },
+            "Property": "CUSTOMER_STATE"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "5be449c8e6029b890259",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DIM_PRODUCTS"
+              }
+            },
+            "Property": "PRODUCT_CATEGORY_NAME_EN"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "e47dbad29429e7d3b1c6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DIM_SELLERS"
+              }
+            },
+            "Property": "SELLER_ID"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      },
+      {
+        "name": "c499eb11ec36eb496a38",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DIM_DATE"
+              }
+            },
+            "Property": "YEAR_MONTH_SORT_KEY"
+          }
+        },
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "DIM_DATE",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "And": {
+                  "Left": {
+                    "Comparison": {
+                      "ComparisonKind": 4,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "d"
+                            }
+                          },
+                          "Property": "YEAR_MONTH_SORT_KEY"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "201808L"
+                        }
+                      }
+                    }
+                  },
+                  "Right": {
+                    "Comparison": {
+                      "ComparisonKind": 2,
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "d"
+                            }
+                          },
+                          "Property": "YEAR_MONTH_SORT_KEY"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "201701L"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "bfd0ca658b73d7d2ba2c",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "6857fd321464bd0a7b66",
+        "boundFilter": "79b4224c0e8a71257866",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DIM_CUSTOMERS"
+              }
+            },
+            "Property": "CUSTOMER_STATE"
+          }
+        }
+      },
+      {
+        "name": "2b8df5730d734ee1e42c",
+        "boundFilter": "5be449c8e6029b890259",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DIM_PRODUCTS"
+              }
+            },
+            "Property": "PRODUCT_CATEGORY_NAME_EN"
+          }
+        }
+      },
+      {
+        "name": "8f1ab0320a3d09c865bb",
+        "boundFilter": "e47dbad29429e7d3b1c6",
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DIM_SELLERS"
+              }
+            },
+            "Property": "SELLER_ID"
+          }
+        }
+      }
+    ]
+  },
+  "visibility": "HiddenInViewMode"
+}

@@ -4,3 +4,6 @@ target/
 dbt_packages/
 logs/
 dbt_internal_packages/
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+*.pbix

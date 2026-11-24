@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Olist Marketplace Intelligence Suite"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "44e4623a-d056-4226-91f3-659599d70e01"
+  }
+}

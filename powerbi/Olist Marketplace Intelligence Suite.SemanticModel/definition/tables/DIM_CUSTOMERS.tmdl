@@ -1,0 +1,131 @@
+/// Customer dimension containing customer demographics, geography, and lifetime order frequency segmentation
+table DIM_CUSTOMERS
+	lineageTag: ca902bec-db5a-4fd9-8bbe-d49fa8498edc
+
+	column CUSTOMER_UNIQUE_ID
+		dataType: string
+		lineageTag: 1131e756-0faf-4b7a-912f-e5526331afda
+		summarizeBy: none
+		sourceColumn: CUSTOMER_UNIQUE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTOMER_CITY
+		dataType: string
+		lineageTag: e9562c89-5dbf-4f09-927b-e6b427f55c91
+		summarizeBy: none
+		sourceColumn: CUSTOMER_CITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTOMER_STATE
+		dataType: string
+		lineageTag: 3712a4a0-e86e-4ba8-943f-5a66f3eaa3c1
+		dataCategory: StateOrProvince
+		summarizeBy: none
+		sourceColumn: CUSTOMER_STATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTOMER_ZIP_CODE_PREFIX
+		dataType: string
+		lineageTag: 5cd4175d-029d-42fb-93c1-02858defe6d3
+		summarizeBy: none
+		sourceColumn: CUSTOMER_ZIP_CODE_PREFIX
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTOMER_LATITUDE
+		dataType: double
+		lineageTag: 68e95c0f-65a5-44b8-9a87-19ab4b1ef725
+		dataCategory: Latitude
+		summarizeBy: none
+		sourceColumn: CUSTOMER_LATITUDE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUSTOMER_LONGITUDE
+		dataType: double
+		lineageTag: 5029032c-0f7e-4a84-9284-f03cc6b46c57
+		dataCategory: Longitude
+		summarizeBy: none
+		sourceColumn: CUSTOMER_LONGITUDE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FIRST_ORDER_AT
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cd5fb4cb-c612-459e-ab45-d17eac692153
+		summarizeBy: none
+		sourceColumn: FIRST_ORDER_AT
+
+		annotation SummarizationSetBy = Automatic
+
+	column MOST_RECENT_ORDER_AT
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bd06258e-4382-485d-b91d-99a45ee7d515
+		summarizeBy: none
+		sourceColumn: MOST_RECENT_ORDER_AT
+
+		annotation SummarizationSetBy = Automatic
+
+	column LIFETIME_ORDERS_COUNT
+		dataType: int64
+		lineageTag: 1030d344-cac5-4631-a930-b9495c9ac893
+		summarizeBy: none
+		sourceColumn: LIFETIME_ORDERS_COUNT
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CUSTOMER_SEGMENT
+		dataType: string
+		lineageTag: 4887eebc-89a1-48f0-ae03-d8d6c5b9f8d1
+		summarizeBy: none
+		sourceColumn: CUSTOMER_SEGMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDER_FREQUENCY_BUCKET
+		dataType: string
+		lineageTag: f3befc54-cd22-4e18-99ca-6d2e31e561ef
+		summarizeBy: none
+		sourceColumn: ORDER_FREQUENCY_BUCKET
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDER_FREQUENCY_SORT_KEY
+		dataType: double
+		isHidden
+		lineageTag: b9d525f8-95d5-4d1d-a668-1a7fce6a241c
+		summarizeBy: none
+		sourceColumn: ORDER_FREQUENCY_SORT_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition DIM_CUSTOMERS = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("rfmzfed-uu44338.snowflakecomputing.com","OLIST_WH",[Implementation="2.0"]),
+				    OLIST_DW_Database = Source{[Name="OLIST_DW",Kind="Database"]}[Data],
+				    DBT_MUSTAPHA_Schema = OLIST_DW_Database{[Name="DBT_MUSTAPHA",Kind="Schema"]}[Data],
+				    DIM_CUSTOMERS_Table = DBT_MUSTAPHA_Schema{[Name="DIM_CUSTOMERS",Kind="Table"]}[Data]
+				in
+				    DIM_CUSTOMERS_Table
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

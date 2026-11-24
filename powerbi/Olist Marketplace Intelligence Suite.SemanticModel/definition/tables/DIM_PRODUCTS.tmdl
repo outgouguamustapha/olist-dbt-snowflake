@@ -1,0 +1,133 @@
+/// Product dimension containing catalog category translations and physical item dimensions
+table DIM_PRODUCTS
+	lineageTag: c94b1f49-150c-48cc-b940-ed0140a046cd
+
+	column PRODUCT_ID
+		dataType: string
+		lineageTag: d1b4a0f1-c895-4ea2-b139-feb7bf52e1f3
+		summarizeBy: none
+		sourceColumn: PRODUCT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCT_CATEGORY_NAME_EN
+		dataType: string
+		lineageTag: 7f8d0c17-b4a9-492f-a4e9-3e0be19642e4
+		summarizeBy: none
+		sourceColumn: PRODUCT_CATEGORY_NAME_EN
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCT_CATEGORY_NAME_PT
+		dataType: string
+		lineageTag: 5ffd29d0-2aef-498d-a9a0-320951c9f944
+		summarizeBy: none
+		sourceColumn: PRODUCT_CATEGORY_NAME_PT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCT_NAME_CHAR_LENGTH
+		dataType: double
+		lineageTag: 8e6b2341-5e11-44f5-85d6-f77a88991dc4
+		summarizeBy: none
+		sourceColumn: PRODUCT_NAME_CHAR_LENGTH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRODUCT_DESCRIPTION_CHAR_LENGTH
+		dataType: double
+		lineageTag: d3f40f39-4679-4663-8d56-5dc15aa52f7a
+		summarizeBy: none
+		sourceColumn: PRODUCT_DESCRIPTION_CHAR_LENGTH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRODUCT_PHOTOS_COUNT
+		dataType: double
+		lineageTag: 855b1acb-2582-4978-80f5-0b149c9f6640
+		summarizeBy: none
+		sourceColumn: PRODUCT_PHOTOS_COUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRODUCT_WEIGHT_G
+		dataType: double
+		lineageTag: 833a30b3-3f43-4440-8839-3ce036205b7d
+		summarizeBy: none
+		sourceColumn: PRODUCT_WEIGHT_G
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRODUCT_LENGTH_CM
+		dataType: double
+		lineageTag: bd12cfa8-69f9-4003-90f6-cf0489f47d83
+		summarizeBy: none
+		sourceColumn: PRODUCT_LENGTH_CM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRODUCT_HEIGHT_CM
+		dataType: double
+		lineageTag: 7b94f7ae-0146-4ed9-8311-11e4c95a11ae
+		summarizeBy: none
+		sourceColumn: PRODUCT_HEIGHT_CM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRODUCT_WIDTH_CM
+		dataType: double
+		lineageTag: 61c2ebf3-d8d0-4fa2-8bd9-1937a09afd7b
+		summarizeBy: none
+		sourceColumn: PRODUCT_WIDTH_CM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRODUCT_VOLUME_CM3
+		dataType: double
+		lineageTag: 23b84167-5e16-4972-a92c-019f372b733a
+		summarizeBy: none
+		sourceColumn: PRODUCT_VOLUME_CM3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRODUCT_WEIGHT_TIER
+		dataType: string
+		lineageTag: 2f064407-b958-4d4f-aac9-e4046dbdd28d
+		summarizeBy: none
+		sourceColumn: PRODUCT_WEIGHT_TIER
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_PRODUCTS = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("rfmzfed-uu44338.snowflakecomputing.com","OLIST_WH",[Implementation="2.0"]),
+				    OLIST_DW_Database = Source{[Name="OLIST_DW",Kind="Database"]}[Data],
+				    DBT_MUSTAPHA_Schema = OLIST_DW_Database{[Name="DBT_MUSTAPHA",Kind="Schema"]}[Data],
+				    DIM_PRODUCTS_Table = DBT_MUSTAPHA_Schema{[Name="DIM_PRODUCTS",Kind="Table"]}[Data],
+				    #"Replaced Value" = Table.ReplaceValue(DIM_PRODUCTS_Table,"_"," ",Replacer.ReplaceText,{"PRODUCT_CATEGORY_NAME_EN"}),
+				    #"Capitalized Each Word" = Table.TransformColumns(#"Replaced Value",{{"PRODUCT_CATEGORY_NAME_EN", Text.Proper, type text}})
+				in
+				    #"Capitalized Each Word"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

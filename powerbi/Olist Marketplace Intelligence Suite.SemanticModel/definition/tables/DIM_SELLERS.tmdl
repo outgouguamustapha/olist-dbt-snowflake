@@ -1,0 +1,69 @@
+/// Seller marketplace dimension containing seller location, zip code prefix, and coordinates
+table DIM_SELLERS
+	lineageTag: e6226040-c45a-4c64-bf02-ce3941c37ad2
+
+	column SELLER_ID
+		dataType: string
+		lineageTag: 884401cd-3f15-4c35-9af7-0c11dc27c06b
+		summarizeBy: none
+		sourceColumn: SELLER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SELLER_ZIP_CODE_PREFIX
+		dataType: string
+		lineageTag: 55b6784b-7b42-42af-99c6-c21de5f29d5d
+		summarizeBy: none
+		sourceColumn: SELLER_ZIP_CODE_PREFIX
+
+		annotation SummarizationSetBy = Automatic
+
+	column SELLER_CITY
+		dataType: string
+		lineageTag: 2ba3e77b-71c6-4db3-9e58-e263e2e07c7d
+		summarizeBy: none
+		sourceColumn: SELLER_CITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column SELLER_STATE
+		dataType: string
+		lineageTag: 7476bf92-797a-40dd-bc46-824e01feb4ba
+		summarizeBy: none
+		sourceColumn: SELLER_STATE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SELLER_LATITUDE
+		dataType: double
+		lineageTag: c2fd7d93-ee8c-4636-a309-5df46d99dfd3
+		summarizeBy: none
+		sourceColumn: SELLER_LATITUDE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SELLER_LONGITUDE
+		dataType: double
+		lineageTag: b9b74b54-b337-4057-acf3-590edd28c74e
+		summarizeBy: none
+		sourceColumn: SELLER_LONGITUDE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition DIM_SELLERS = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("rfmzfed-uu44338.snowflakecomputing.com","OLIST_WH",[Implementation="2.0"]),
+				    OLIST_DW_Database = Source{[Name="OLIST_DW",Kind="Database"]}[Data],
+				    DBT_MUSTAPHA_Schema = OLIST_DW_Database{[Name="DBT_MUSTAPHA",Kind="Schema"]}[Data],
+				    DIM_SELLERS_Table = DBT_MUSTAPHA_Schema{[Name="DIM_SELLERS",Kind="Table"]}[Data]
+				in
+				    DIM_SELLERS_Table
+
+	annotation PBI_ResultType = Table
+

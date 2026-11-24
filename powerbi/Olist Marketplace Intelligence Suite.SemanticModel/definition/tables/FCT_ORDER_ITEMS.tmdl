@@ -1,0 +1,198 @@
+/// Order line items fact table containing product, seller, price, and handling details
+table FCT_ORDER_ITEMS
+	lineageTag: bef7c045-5441-43ae-be54-4a91132d90a3
+
+	column ORDER_ITEM_KEY
+		dataType: string
+		lineageTag: 00bf4ec9-ef4e-4f9d-8aae-8b6de3079e8e
+		summarizeBy: none
+		sourceColumn: ORDER_ITEM_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDER_ID
+		dataType: string
+		isHidden
+		lineageTag: 86caff39-59f5-4106-bc09-c0787073c7e8
+		summarizeBy: none
+		sourceColumn: ORDER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDER_ITEM_ID
+		dataType: double
+		lineageTag: c8ff257c-33ef-4de0-be7a-a4688287b7f0
+		summarizeBy: none
+		sourceColumn: ORDER_ITEM_ID
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PRODUCT_ID
+		dataType: string
+		isHidden
+		lineageTag: d572e4f3-6c72-4768-b4d0-e66471dced69
+		summarizeBy: none
+		sourceColumn: PRODUCT_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SELLER_ID
+		dataType: string
+		isHidden
+		lineageTag: 896119c5-0e9d-4323-91b1-aa6c273f4835
+		summarizeBy: none
+		sourceColumn: SELLER_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CUSTOMER_UNIQUE_ID
+		dataType: string
+		isHidden
+		lineageTag: cc742028-07e5-4fa5-be83-d1937bf92803
+		summarizeBy: none
+		sourceColumn: CUSTOMER_UNIQUE_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDER_DATE_KEY
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: acdfd1ee-912f-49f7-b1ba-d838403452c1
+		summarizeBy: none
+		sourceColumn: ORDER_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column SHIPPING_LIMIT_DATE_KEY
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ba5a9a58-fe16-48dc-8cb2-43a731ed21c6
+		summarizeBy: none
+		sourceColumn: SHIPPING_LIMIT_DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDER_STATUS
+		dataType: string
+		isHidden
+		lineageTag: 26de0be0-31ff-47c3-9954-2c496f949f26
+		summarizeBy: none
+		sourceColumn: ORDER_STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDER_PURCHASE_AT
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b40c4962-27a1-4c46-9fd7-781ee49f13b0
+		summarizeBy: none
+		sourceColumn: ORDER_PURCHASE_AT
+
+		annotation SummarizationSetBy = Automatic
+
+	column SHIPPING_LIMIT_AT
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1363107c-eb27-4360-9bfe-7a0ce9be7633
+		summarizeBy: none
+		sourceColumn: SHIPPING_LIMIT_AT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDER_DELIVERED_CARRIER_AT
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e6aa3138-2944-4df0-94c9-f226791836c9
+		summarizeBy: none
+		sourceColumn: ORDER_DELIVERED_CARRIER_AT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ORDER_DELIVERED_CUSTOMER_AT
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bb5ad529-1b73-4697-8d51-fcd0ff74c3a7
+		summarizeBy: none
+		sourceColumn: ORDER_DELIVERED_CUSTOMER_AT
+
+		annotation SummarizationSetBy = Automatic
+
+	column ITEM_PRICE
+		dataType: double
+		isHidden
+		lineageTag: 8243aa1d-6215-4a22-9e75-d776b739db99
+		summarizeBy: sum
+		sourceColumn: ITEM_PRICE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column FREIGHT_VALUE
+		dataType: double
+		isHidden
+		lineageTag: a6d62c64-d257-4089-924e-6482be020638
+		summarizeBy: sum
+		sourceColumn: FREIGHT_VALUE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TOTAL_ITEM_AMOUNT
+		dataType: double
+		isHidden
+		lineageTag: 9525e71e-3ea1-4b36-b978-70723afbb512
+		summarizeBy: sum
+		sourceColumn: TOTAL_ITEM_AMOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SELLER_DISPATCH_DAYS
+		dataType: double
+		lineageTag: 9521e0b7-9bf5-4aee-83a2-4cfd8d5c95b6
+		summarizeBy: sum
+		sourceColumn: SELLER_DISPATCH_DAYS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SELLER_DISPATCH_DELAY_DAYS
+		dataType: double
+		lineageTag: c37ca250-c96c-4474-aa82-44f840c1f874
+		summarizeBy: sum
+		sourceColumn: SELLER_DISPATCH_DELAY_DAYS
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SELLER_DISPATCH_STATUS
+		dataType: string
+		lineageTag: 8e5b8a76-eead-420a-8d5f-a0a87b4e3871
+		summarizeBy: none
+		sourceColumn: SELLER_DISPATCH_STATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FCT_ORDER_ITEMS = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("rfmzfed-uu44338.snowflakecomputing.com","OLIST_WH",[Implementation="2.0"]),
+				    OLIST_DW_Database = Source{[Name="OLIST_DW",Kind="Database"]}[Data],
+				    DBT_MUSTAPHA_Schema = OLIST_DW_Database{[Name="DBT_MUSTAPHA",Kind="Schema"]}[Data],
+				    FCT_ORDER_ITEMS_Table = DBT_MUSTAPHA_Schema{[Name="FCT_ORDER_ITEMS",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(FCT_ORDER_ITEMS_Table,{{"ORDER_DATE_KEY", Int64.Type}, {"SHIPPING_LIMIT_DATE_KEY", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

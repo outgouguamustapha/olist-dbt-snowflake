@@ -1,0 +1,189 @@
+/// Standard Gregorian calendar dimension for time intelligence and date modeling
+table DIM_DATE
+	lineageTag: 93a9473b-1a12-48dd-81be-d97f0d04e65c
+	dataCategory: Time
+
+	column DATE_KEY
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c416aa1-4067-4813-a234-148927b2ac12
+		summarizeBy: none
+		sourceColumn: DATE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CALENDAR_DATE
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		lineageTag: 2242df11-1884-4597-aa5c-4167bdbd39c7
+		summarizeBy: none
+		sourceColumn: CALENDAR_DATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column YEAR
+		dataType: int64
+		formatString: 0
+		lineageTag: 96005844-e9a6-4e31-a02e-7d84928824ff
+		summarizeBy: none
+		sourceColumn: YEAR
+
+		changedProperty = DataType
+
+		annotation SummarizationSetBy = User
+
+	column QUARTER
+		dataType: double
+		lineageTag: 1a15ccc4-d558-46e8-a510-1cece54add08
+		summarizeBy: none
+		sourceColumn: QUARTER
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MONTH
+		dataType: double
+		lineageTag: 19bda7e7-52b2-4cee-986f-6b761ef13e66
+		summarizeBy: none
+		sourceColumn: MONTH
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MONTH_NAME
+		dataType: string
+		lineageTag: 9fb47a9c-89fc-45b2-93f4-5101e368c750
+		summarizeBy: none
+		sourceColumn: MONTH_NAME
+		sortByColumn: MONTH
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH_SHORT_NAME
+		dataType: string
+		lineageTag: 2cc45754-4369-4b05-96ac-57f8a312f01f
+		summarizeBy: none
+		sourceColumn: MONTH_SHORT_NAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column WEEK_OF_YEAR
+		dataType: double
+		lineageTag: 28b073fe-254d-419b-89c2-78ea89944827
+		summarizeBy: none
+		sourceColumn: WEEK_OF_YEAR
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DAY_OF_MONTH
+		dataType: double
+		lineageTag: 9ef7f674-14bb-4b23-aa12-0bdee6e4eae7
+		summarizeBy: none
+		sourceColumn: DAY_OF_MONTH
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DAY_OF_WEEK
+		dataType: double
+		lineageTag: 1020426c-d95c-45e8-bbea-1174da01c7ea
+		summarizeBy: none
+		sourceColumn: DAY_OF_WEEK
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column DAY_OF_WEEK_SHORT
+		dataType: string
+		lineageTag: 7ce6a5db-d59b-43ca-bb73-dabaea62f8d5
+		summarizeBy: none
+		sourceColumn: DAY_OF_WEEK_SHORT
+
+		annotation SummarizationSetBy = Automatic
+
+	column DAY_OF_WEEK_NAME
+		dataType: string
+		lineageTag: c3d00381-1085-4e44-ae3d-42ec598d6dac
+		summarizeBy: none
+		sourceColumn: DAY_OF_WEEK_NAME
+		sortByColumn: DAY_OF_WEEK
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column IS_WEEKEND
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c4f6bb89-db7d-4840-bc0e-7e17426d06ce
+		summarizeBy: none
+		sourceColumn: IS_WEEKEND
+
+		annotation SummarizationSetBy = Automatic
+
+	column YEAR_MONTH
+		dataType: string
+		lineageTag: ca0f4cac-1fac-4819-9a43-0a49c7a38427
+		summarizeBy: none
+		sourceColumn: YEAR_MONTH
+		sortByColumn: YEAR_MONTH_SORT_KEY
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUARTER_YEAR
+		dataType: string
+		lineageTag: 399d4384-6bc9-4ba3-a3fc-5f8ab72844eb
+		summarizeBy: none
+		sourceColumn: QUARTER_YEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column MONTH_YEAR
+		dataType: string
+		lineageTag: a8108824-0a4e-4511-ba1a-e24986b7aa66
+		summarizeBy: none
+		sourceColumn: MONTH_YEAR
+		sortByColumn: YEAR_MONTH_SORT_KEY
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column YEAR_MONTH_SORT_KEY
+		dataType: int64
+		formatString: 0
+		lineageTag: 7914bb98-441d-455d-9df3-b1e8a43b45bd
+		summarizeBy: none
+		sourceColumn: YEAR_MONTH_SORT_KEY
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DIM_DATE = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("rfmzfed-uu44338.snowflakecomputing.com","OLIST_WH",[Implementation="2.0"]),
+				    OLIST_DW_Database = Source{[Name="OLIST_DW",Kind="Database"]}[Data],
+				    DBT_MUSTAPHA_Schema = OLIST_DW_Database{[Name="DBT_MUSTAPHA",Kind="Schema"]}[Data],
+				    DIM_DATE_Table = DBT_MUSTAPHA_Schema{[Name="DIM_DATE",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(DIM_DATE_Table,{{"DATE_KEY", Int64.Type}, {"YEAR_MONTH_SORT_KEY", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
