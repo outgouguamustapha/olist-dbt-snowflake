@@ -3,12 +3,16 @@
 [![Snowflake](https://img.shields.io/badge/Snowflake-Data%20Cloud-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white)](https://www.snowflake.com/)
 [![dbt](https://img.shields.io/badge/dbt-Core%20v1.8+-FF694B?style=for-the-badge&logo=dbt&logoColor=white)](https://www.getdbt.com/)
 [![Power BI](https://img.shields.io/badge/Power%20BI-PBIP%20%7C%20TMDL-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Power%20BI%20Service-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)](https://app.powerbi.com/view?r=eyJrIjoiZGY4YTNkMzAtMDcyNy00NjU0LTgwNmEtNGZjZjFhN2RjZjhiIiwidCI6Ijg0ZDI3MGQyLTBiYzUtNGQ1NS1iZjBhLTI3NGYxYTU3NmNiZiJ9)
 [![BPA Compliance](https://img.shields.io/badge/Tabular%20BPA-0%20Violations%20(100%25)-00A88F?style=for-the-badge&logo=checkmarx&logoColor=white)](https://github.com/microsoft/Analysis-Services)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 An end-to-end, enterprise-grade Analytics Engineering and Business Intelligence solution built on the **Olist Brazilian E-Commerce public dataset**, capturing **20 full operating months** (`January 2017 – August 2018`). 
 
 Engineered with **Snowflake**, **dbt**, and **Microsoft Power BI Developer Mode (`.pbip` / TMDL)**, this repository implements a Kimball star schema, robust data quality test coverage, VertiPaq-optimized tabular modeling, automated executive narrative measures, and a 5-page reporting suite with zero Tabular Best Practice Analyzer (BPA) violations.
+
+> 🚀 **[Explore the Live Interactive Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiZGY4YTNkMzAtMDcyNy00NjU0LTgwNmEtNGZjZjFhN2RjZjhiIiwidCI6Ijg0ZDI3MGQyLTBiYzUtNGQ1NS1iZjBhLTI3NGYxYTU3NmNiZiJ9)**  
+> Experience all 5 pages live in your browser with fully functional cross-filtering, slicers, dynamic DAX narratives, and contextual drill-through.
 
 ---
 
@@ -474,6 +478,9 @@ Status: 100% PASS (0 Violations)
 
 ## 5. Executive Dashboard Showcase
 
+> [!TIP]
+> **Live Interactive Report:** You can interact with all 5 report pages directly in your browser without local setup via the **[Live Power BI Service Dashboard](https://app.powerbi.com/view?r=eyJrIjoiZGY4YTNkMzAtMDcyNy00NjU0LTgwNmEtNGZjZjFhN2RjZjhiIiwidCI6Ijg0ZDI3MGQyLTBiYzUtNGQ1NS1iZjBhLTI3NGYxYTU3NmNiZiJ9)**.
+
 The Power BI reporting suite (`Olist Marketplace Intelligence Suite.Report`) follows a modern enterprise layout:
 * **Canvas Specifications:** High-definition 1080p canvas ($1920 \times 1080\text{ px}$) configured with standard 16px margins and gutters.
 * **Navigation Architecture:** Top-right horizontal Page Navigator embedded directly inside the top navy header banner (`#0F2942`) alongside the operating scope indicator (`Scope: Jan 2017 – Aug 2018 | 20 Full Operating Months`), styled with `#173B5E` idle state and `#00A88F` Accent Teal active state.
@@ -668,6 +675,9 @@ dbt test
 2. Double-click [`Olist Marketplace Intelligence Suite.pbip`](powerbi/Olist%20Marketplace%20Intelligence%20Suite.pbip).
 3. Power BI Desktop will parse the TMDL definitions and PBIR report structure.
 4. If prompted, input your Snowflake credentials to refresh the DirectQuery / Import partition data.
+
+> [!NOTE]
+> **Instant Online Access:** If you do not have Power BI Desktop installed, you can access the live hosted dashboard anytime via the **[Power BI Service Web App](https://app.powerbi.com/view?r=eyJrIjoiZGY4YTNkMzAtMDcyNy00NjU0LTgwNmEtNGZjZjFhN2RjZjhiIiwidCI6Ijg0ZDI3MGQyLTBiYzUtNGQ1NS1iZjBhLTI3NGYxYTU3NmNiZiJ9)**.
 
 ---
 
