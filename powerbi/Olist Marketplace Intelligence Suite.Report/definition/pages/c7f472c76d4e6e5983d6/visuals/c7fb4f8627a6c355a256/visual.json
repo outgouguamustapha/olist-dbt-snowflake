@@ -338,6 +338,88 @@
             "id": "default"
           }
         }
+      ],
+      "cartesianTrendVisual": [
+        {
+          "properties": {
+            "seriesColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Total Sales (product)",
+            "id": "_Measures.Total Sales (product)"
+          }
+        },
+        {
+          "properties": {
+            "seriesColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Total Orders",
+            "id": "_Measures.Total Orders"
+          }
+        },
+        {
+          "properties": {
+            "seriesColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Average Order Value",
+            "id": "_Measures.Average Order Value"
+          }
+        },
+        {
+          "properties": {
+            "seriesColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Average Review Score",
+            "id": "_Measures.Average Review Score"
+          }
+        }
       ]
     },
     "visualContainerObjects": {

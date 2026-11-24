@@ -337,6 +337,88 @@
             "id": "default"
           }
         }
+      ],
+      "cartesianTrendVisual": [
+        {
+          "properties": {
+            "seriesColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Active Sellers",
+            "id": "_Measures.Active Sellers"
+          }
+        },
+        {
+          "properties": {
+            "seriesColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Active SKUs Sold",
+            "id": "_Measures.Active SKUs Sold"
+          }
+        },
+        {
+          "properties": {
+            "seriesColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Freight-to-Price Ratio %",
+            "id": "_Measures.Freight-to-Price Ratio %"
+          }
+        },
+        {
+          "properties": {
+            "seriesColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Average Item Price",
+            "id": "_Measures.Average Item Price"
+          }
+        }
       ]
     },
     "visualContainerObjects": {

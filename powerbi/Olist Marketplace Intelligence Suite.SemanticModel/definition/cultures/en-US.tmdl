@@ -15678,6 +15678,336 @@ cultureInfo en-US
 			    }
 			  },
 			  "Relationships": {
+			    "dim_sellers_has_entity__measure_operations_executive_insight": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_SELLERS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_sellers": {
+			          "Target": {
+			            "Entity": "dim_sellers"
+			          }
+			        },
+			        "entity__measure.operations_executive_insight": {
+			          "Target": {
+			            "Entity": "entity__measure.operations_executive_insight"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_sellers"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.operations_executive_insight"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_sellers_have_operations_executive_insight"
+			        }
+			      ]
+			    },
+			    "dim_product_has_entity__measure_operations_executive_insight": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_PRODUCTS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "entity__measure.operations_executive_insight": {
+			          "Target": {
+			            "Entity": "entity__measure.operations_executive_insight"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.operations_executive_insight"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_operations_executive_insight"
+			        }
+			      ]
+			    },
+			    "fct_order_has_entity__measure_logistics_executive_insight": {
+			      "Binding": {
+			        "ConceptualEntity": "FCT_ORDERS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_order": {
+			          "Target": {
+			            "Entity": "fct_order"
+			          }
+			        },
+			        "entity__measure.logistics_executive_insight": {
+			          "Target": {
+			            "Entity": "entity__measure.logistics_executive_insight"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_order"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.logistics_executive_insight"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_orders_have_logistics_executive_insight"
+			        }
+			      ]
+			    },
+			    "dim_customer_has_entity__measure_logistics_executive_insight": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_CUSTOMERS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_customer": {
+			          "Target": {
+			            "Entity": "dim_customer"
+			          }
+			        },
+			        "entity__measure.logistics_executive_insight": {
+			          "Target": {
+			            "Entity": "entity__measure.logistics_executive_insight"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_customer"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.logistics_executive_insight"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_customers_have_logistics_executive_insight"
+			        }
+			      ]
+			    },
+			    "fct_order_has_entity__measure_retention_executive_insight": {
+			      "Binding": {
+			        "ConceptualEntity": "FCT_ORDERS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_order": {
+			          "Target": {
+			            "Entity": "fct_order"
+			          }
+			        },
+			        "entity__measure.retention_executive_insight": {
+			          "Target": {
+			            "Entity": "entity__measure.retention_executive_insight"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_order"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.retention_executive_insight"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_orders_have_retention_executive_insight"
+			        }
+			      ]
+			    },
+			    "dim_product_has_entity__measure_retention_executive_insight": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_PRODUCTS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_product": {
+			          "Target": {
+			            "Entity": "dim_product"
+			          }
+			        },
+			        "entity__measure.retention_executive_insight": {
+			          "Target": {
+			            "Entity": "entity__measure.retention_executive_insight"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_product"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.retention_executive_insight"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_products_have_retention_executive_insight"
+			        }
+			      ]
+			    },
+			    "fct_order_has_entity__measure_commercial_executive_insight": {
+			      "Binding": {
+			        "ConceptualEntity": "FCT_ORDERS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_order": {
+			          "Target": {
+			            "Entity": "fct_order"
+			          }
+			        },
+			        "entity__measure.commercial_executive_insight": {
+			          "Target": {
+			            "Entity": "entity__measure.commercial_executive_insight"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_order"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.commercial_executive_insight"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_orders_have_commercial_executive_insight"
+			        }
+			      ]
+			    },
+			    "dim_date_has_entity__measure_commercial_executive_insight": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_DATE"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_date": {
+			          "Target": {
+			            "Entity": "dim_date"
+			          }
+			        },
+			        "entity__measure.commercial_executive_insight": {
+			          "Target": {
+			            "Entity": "entity__measure.commercial_executive_insight"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_date"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.commercial_executive_insight"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_dates_have_commercial_executive_insight"
+			        }
+			      ]
+			    },
+			    "dim_customer_has_entity__measure_commercial_executive_insight": {
+			      "Binding": {
+			        "ConceptualEntity": "DIM_CUSTOMERS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_customer": {
+			          "Target": {
+			            "Entity": "dim_customer"
+			          }
+			        },
+			        "entity__measure.commercial_executive_insight": {
+			          "Target": {
+			            "Entity": "entity__measure.commercial_executive_insight"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_customer"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.commercial_executive_insight"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_customers_have_commercial_executive_insight"
+			        }
+			      ]
+			    },
+			    "fct_order_item_has_entity__measure_orders_by_shipping_limit": {
+			      "Binding": {
+			        "ConceptualEntity": "FCT_ORDER_ITEMS"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fct_order_item": {
+			          "Target": {
+			            "Entity": "fct_order_item"
+			          }
+			        },
+			        "entity__measure.orders_by_shipping_limit": {
+			          "Target": {
+			            "Entity": "entity__measure.orders_by_shipping_limit"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fct_order_item"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.orders_by_shipping_limit"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fct_order_items_have_orders_by_shipping_limit"
+			        }
+			      ]
+			    },
 			    "dim_sellers_has_entity__measure_drillthrough_context_title": {
 			      "Binding": {
 			        "ConceptualEntity": "DIM_SELLERS"
@@ -20590,336 +20920,6 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "dim_sellers_have_fct_order_items"
-			        }
-			      ]
-			    },
-			    "fct_order_item_has_entity__measure_orders_by_shipping_limit": {
-			      "Binding": {
-			        "ConceptualEntity": "FCT_ORDER_ITEMS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_order_item": {
-			          "Target": {
-			            "Entity": "fct_order_item"
-			          }
-			        },
-			        "entity__measure.orders_by_shipping_limit": {
-			          "Target": {
-			            "Entity": "entity__measure.orders_by_shipping_limit"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_order_item"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.orders_by_shipping_limit"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_order_items_have_orders_by_shipping_limit"
-			        }
-			      ]
-			    },
-			    "dim_customer_has_entity__measure_commercial_executive_insight": {
-			      "Binding": {
-			        "ConceptualEntity": "DIM_CUSTOMERS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_customer": {
-			          "Target": {
-			            "Entity": "dim_customer"
-			          }
-			        },
-			        "entity__measure.commercial_executive_insight": {
-			          "Target": {
-			            "Entity": "entity__measure.commercial_executive_insight"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_customer"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.commercial_executive_insight"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_customers_have_commercial_executive_insight"
-			        }
-			      ]
-			    },
-			    "dim_date_has_entity__measure_commercial_executive_insight": {
-			      "Binding": {
-			        "ConceptualEntity": "DIM_DATE"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_date": {
-			          "Target": {
-			            "Entity": "dim_date"
-			          }
-			        },
-			        "entity__measure.commercial_executive_insight": {
-			          "Target": {
-			            "Entity": "entity__measure.commercial_executive_insight"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_date"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.commercial_executive_insight"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_dates_have_commercial_executive_insight"
-			        }
-			      ]
-			    },
-			    "fct_order_has_entity__measure_commercial_executive_insight": {
-			      "Binding": {
-			        "ConceptualEntity": "FCT_ORDERS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_order": {
-			          "Target": {
-			            "Entity": "fct_order"
-			          }
-			        },
-			        "entity__measure.commercial_executive_insight": {
-			          "Target": {
-			            "Entity": "entity__measure.commercial_executive_insight"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_order"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.commercial_executive_insight"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_orders_have_commercial_executive_insight"
-			        }
-			      ]
-			    },
-			    "dim_product_has_entity__measure_retention_executive_insight": {
-			      "Binding": {
-			        "ConceptualEntity": "DIM_PRODUCTS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_product": {
-			          "Target": {
-			            "Entity": "dim_product"
-			          }
-			        },
-			        "entity__measure.retention_executive_insight": {
-			          "Target": {
-			            "Entity": "entity__measure.retention_executive_insight"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_product"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.retention_executive_insight"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_products_have_retention_executive_insight"
-			        }
-			      ]
-			    },
-			    "fct_order_has_entity__measure_retention_executive_insight": {
-			      "Binding": {
-			        "ConceptualEntity": "FCT_ORDERS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_order": {
-			          "Target": {
-			            "Entity": "fct_order"
-			          }
-			        },
-			        "entity__measure.retention_executive_insight": {
-			          "Target": {
-			            "Entity": "entity__measure.retention_executive_insight"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_order"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.retention_executive_insight"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_orders_have_retention_executive_insight"
-			        }
-			      ]
-			    },
-			    "dim_customer_has_entity__measure_logistics_executive_insight": {
-			      "Binding": {
-			        "ConceptualEntity": "DIM_CUSTOMERS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_customer": {
-			          "Target": {
-			            "Entity": "dim_customer"
-			          }
-			        },
-			        "entity__measure.logistics_executive_insight": {
-			          "Target": {
-			            "Entity": "entity__measure.logistics_executive_insight"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_customer"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.logistics_executive_insight"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_customers_have_logistics_executive_insight"
-			        }
-			      ]
-			    },
-			    "fct_order_has_entity__measure_logistics_executive_insight": {
-			      "Binding": {
-			        "ConceptualEntity": "FCT_ORDERS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "fct_order": {
-			          "Target": {
-			            "Entity": "fct_order"
-			          }
-			        },
-			        "entity__measure.logistics_executive_insight": {
-			          "Target": {
-			            "Entity": "entity__measure.logistics_executive_insight"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "fct_order"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.logistics_executive_insight"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "fct_orders_have_logistics_executive_insight"
-			        }
-			      ]
-			    },
-			    "dim_product_has_entity__measure_operations_executive_insight": {
-			      "Binding": {
-			        "ConceptualEntity": "DIM_PRODUCTS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_product": {
-			          "Target": {
-			            "Entity": "dim_product"
-			          }
-			        },
-			        "entity__measure.operations_executive_insight": {
-			          "Target": {
-			            "Entity": "entity__measure.operations_executive_insight"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_product"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.operations_executive_insight"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_products_have_operations_executive_insight"
-			        }
-			      ]
-			    },
-			    "dim_sellers_has_entity__measure_operations_executive_insight": {
-			      "Binding": {
-			        "ConceptualEntity": "DIM_SELLERS"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "dim_sellers": {
-			          "Target": {
-			            "Entity": "dim_sellers"
-			          }
-			        },
-			        "entity__measure.operations_executive_insight": {
-			          "Target": {
-			            "Entity": "entity__measure.operations_executive_insight"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "dim_sellers"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.operations_executive_insight"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "dim_sellers_have_operations_executive_insight"
 			        }
 			      ]
 			    },

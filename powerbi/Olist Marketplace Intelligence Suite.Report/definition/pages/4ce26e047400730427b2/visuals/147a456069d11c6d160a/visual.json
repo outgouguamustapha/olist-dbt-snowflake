@@ -46,8 +46,9 @@
                 }
               },
               "queryRef": "DIM_SELLERS.SELLER_STATE",
-              "nativeQueryRef": "SELLER_STATE",
-              "active": true
+              "nativeQueryRef": "Seller State",
+              "active": true,
+              "displayName": "Seller State"
             },
             {
               "field": {
@@ -61,8 +62,9 @@
                 }
               },
               "queryRef": "DIM_PRODUCTS.PRODUCT_CATEGORY_NAME_EN",
-              "nativeQueryRef": "PRODUCT_CATEGORY_NAME_EN",
-              "active": true
+              "nativeQueryRef": "Product Category",
+              "active": true,
+              "displayName": "Product Category"
             },
             {
               "field": {
@@ -76,8 +78,9 @@
                 }
               },
               "queryRef": "DIM_SELLERS.SELLER_ID",
-              "nativeQueryRef": "SELLER_ID",
-              "active": true
+              "nativeQueryRef": "Seller ID",
+              "active": true,
+              "displayName": "Seller ID"
             },
             {
               "field": {
@@ -91,8 +94,9 @@
                 }
               },
               "queryRef": "DIM_PRODUCTS.PRODUCT_ID",
-              "nativeQueryRef": "PRODUCT_ID",
-              "active": true
+              "nativeQueryRef": "Product ID",
+              "active": true,
+              "displayName": "Product ID"
             }
           ]
         }

@@ -351,6 +351,88 @@
             "id": "default"
           }
         }
+      ],
+      "cartesianTrendVisual": [
+        {
+          "properties": {
+            "seriesColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Active Customers",
+            "id": "_Measures.Active Customers"
+          }
+        },
+        {
+          "properties": {
+            "seriesColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Repeat Rate",
+            "id": "_Measures.Repeat Rate"
+          }
+        },
+        {
+          "properties": {
+            "seriesColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Repeat Order Revenue",
+            "id": "_Measures.Repeat Order Revenue"
+          }
+        },
+        {
+          "properties": {
+            "seriesColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 3,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Average Items per Order",
+            "id": "_Measures.Average Items per Order"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
