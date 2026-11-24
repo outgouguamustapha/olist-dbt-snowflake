@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: olist_raw
+    database: olist_dw
+    schema: raw
+    description: "Raw transactional data extracted from Brazilian E-Commerce public dataset (Olist)."
+    tables:
+      - name: raw_orders
+        description: "Core table tracking e-commerce order lifecycle and timestamps."
+      - name: raw_order_items
+        description: "Line-item level details of products, sellers, and pricing per order."
+      - name: raw_order_payments
+        description: "Payment methods, installment breakdown, and transaction values."
+      - name: raw_products
+        description: "Product catalog attributes and dimensions."
+      - name: raw_customers
+        description: "Customer geographic details and unique identity mappings."
+      - name: raw_sellers
+        description: "Seller locations and geographic coordinates."
+      - name: raw_category_translation
+        description: "Portuguese to English mapping for product categories."
+      - name: raw_geolocation
+        description: "Brazilian zip codes mapped to latitude and longitude coordinates."
+      - name: raw_order_reviews
+        description: "Customer satisfaction review scores and survey text comments."
