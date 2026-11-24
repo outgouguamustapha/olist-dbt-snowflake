@@ -11,12 +11,12 @@ An end-to-end, enterprise-grade Analytics Engineering and Business Intelligence 
 
 Engineered with **Snowflake**, **dbt**, and **Microsoft Power BI Developer Mode (`.pbip` / TMDL)**, this repository implements a Kimball star schema, robust data quality test coverage, VertiPaq-optimized tabular modeling, automated executive narrative measures, and a 5-page reporting suite with zero Tabular Best Practice Analyzer (BPA) violations.
 
-> 🚀 **[Explore the Live Interactive Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiZGY4YTNkMzAtMDcyNy00NjU0LTgwNmEtNGZjZjFhN2RjZjhiIiwidCI6Ijg0ZDI3MGQyLTBiYzUtNGQ1NS1iZjBhLTI3NGYxYTU3NmNiZiJ9)**  
+> **[Explore the Live Interactive Power BI Dashboard](https://app.powerbi.com/view?r=eyJrIjoiZGY4YTNkMzAtMDcyNy00NjU0LTgwNmEtNGZjZjFhN2RjZjhiIiwidCI6Ijg0ZDI3MGQyLTBiYzUtNGQ1NS1iZjBhLTI3NGYxYTU3NmNiZiJ9)**  
 > Experience all 5 pages live in your browser with fully functional cross-filtering, slicers, dynamic DAX narratives, and contextual drill-through.
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 1. [Executive Overview](#1-executive-overview)
 2. [Architecture & Data Lineage](#2-architecture--data-lineage)
 3. [dbt Data Modeling & Quality Governance](#3-dbt-data-modeling--quality-governance)
